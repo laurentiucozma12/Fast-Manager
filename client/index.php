@@ -6,6 +6,7 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <?php include './navbar.php'; ?>
     <h1>Users</h1>
     <table>
         <thead>
@@ -15,7 +16,7 @@
                 <th>Last Name</th>
             </tr>
         </thead>
-        <tbody id="products-table">
+        <tbody id="users-table">
             <!-- Users will be inserted here -->
         </tbody>
     </table>

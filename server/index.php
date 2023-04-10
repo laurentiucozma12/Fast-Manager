@@ -1,9 +1,8 @@
 <?php
 
 require_once 'database.php';
-require_once 'users.php';
-require_once 'projects.php';
-require_once 'tasks.php';
+require_once 'register.php';
+require_once 'login.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 

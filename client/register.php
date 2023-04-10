@@ -1,8 +1,7 @@
-<?php 
-include '../server/config.php';
-include ROOT_PATH.'/server/registerService.php';
+<?php
 // include ROOT_PATH.'/assets/html/head.php';
 ?>
+<?php include './navbar.php'; ?>
 <div class='wrap d-flex justify-content-center'>
     <div class='form-container wrap col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4'>
         <h1 class='mb-4 text-center'>Register</h1>

@@ -1,4 +1,4 @@
-API_URL = '../server/index';
+API_URL = '../server/index.php';
 
 $(document).ready(function() {
     $.ajax({
