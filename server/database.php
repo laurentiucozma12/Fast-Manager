@@ -4,7 +4,7 @@ class Database
 {
     private $pdo;
     const DB_HOST = "localhost";
-    const DB_NAME = "fast_manager";
+    const DB_NAME = "mg_test";
     const DB_USER = "root";
     const DB_PASS = "";
 

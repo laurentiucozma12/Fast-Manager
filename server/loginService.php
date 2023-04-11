@@ -1,5 +1,6 @@
 <?php
-session_start();
+include ROOT_PATH.'/server/database.php';
+$pdo = new Database;
 
 if (isset($_POST['login'])) {
     if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {    
@@ -26,7 +27,7 @@ if (isset($_POST['login'])) {
                     $resultUserID = $userID->fetchColumn();
                     $_SESSION["userID"] = $resultUserID;
                     
-                    header('Location: ./dashboard.php');
+                    header('Location: ../client/dashboard.php');
                 } else {
                     echo 'Password is wrong';
                 }

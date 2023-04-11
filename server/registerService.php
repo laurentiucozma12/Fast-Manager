@@ -1,5 +1,6 @@
 <?php
-session_start();
+include ROOT_PATH.'/server/database.php';
+$pdo = new Database;
 
 if (isset($_POST['register'])) {
     if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['repeat_password']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['repeat_password'])) {
