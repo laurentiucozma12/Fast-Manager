@@ -1,8 +1,8 @@
 <?php 
-include '../server/config.php';
-include ROOT_PATH.'/server/loginService.php';
-// include ROOT_PATH.'/assets/html/head.php';
-include ROOT_PATH.'/client/navbar.php';
+// include '../includes/config.php';
+// include ROOT_PATH.'/client/assets/html/head.php';
+// include ROOT_PATH.'/client/assets/html/navbar.php';
+// include ROOT_PATH.'/server/loginService.php';
 ?>
 <div class='wrap d-flex justify-content-center'>
     <div class='form-container wrap col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4'>
@@ -28,5 +28,5 @@ include ROOT_PATH.'/client/navbar.php';
     </div>
 </div>
 <?php 
-// include ROOT_PATH.'/assets/html/footer.php' 
+// include ROOT_PATH.'/client/assets/html/footer.php'; 
 ?>
