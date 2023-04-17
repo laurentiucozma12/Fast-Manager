@@ -4,24 +4,16 @@ namespace Person;
 
 class Person {
     // Properties
-    private $name;
-    private $age;
-
-    public function __construct($name, $age) {
-        $this->name = $name;
-        $this->age = $age;
-    }
+    public $name;
+    public $eyeColor;
+    public $age;
 
     // Methods
-    public function setPerson($name) {
-        $this->name = $name;
+    public function setName(string $newName) {
+        $this->name = $newName;
     }
 
-    public function getPerson() {
+    public function getName() {
         return $this->name;
-    }
-
-    public function getAge() {
-        return $this->age;
     }
 }
