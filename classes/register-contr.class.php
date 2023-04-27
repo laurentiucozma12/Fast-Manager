@@ -24,14 +24,20 @@ class RegisterContr extends Register {
         }
         
         if ($this->invalidUsername() == false) {
-            echo "Invalid username!";
-            header("location:../index.php?error=invalidinput");
+            echo "Username should be at least 3 characters in length and no longer than 20 characters!";
+            header("location:../index.php?error=invalidusername");
             exit();
         }
         
         if ($this->invalidEmail() == false) {
             echo "Invalid email!";
-            header("location:../index.php?error=invalidinput");
+            header("location:../index.php?error=invalidemail");
+            exit();
+        }
+        
+        if ($this->invalidPassword() == false) {
+            echo 'Password should be at least 8 characters in length, no longer than 20 characters and should include at least one upper case letter, one number, and one special character.';
+            header("location:../index.php?error=invalidPassword");
             exit();
         }
         
@@ -41,9 +47,9 @@ class RegisterContr extends Register {
             exit();
         }
 
-        if ($this->usernameTaken() == false) {
-            echo "Username or email is taken";
-            header("location:../index.php?error=usernameoremailtaken");
+        if ($this->emailTaken() == false) {
+            echo "Email is taken";
+            header("location:../index.php?error=emailtaken");
             exit();
         }
 
@@ -64,7 +70,7 @@ class RegisterContr extends Register {
 
     private function invalidUsername() {
         $result;
-        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
+        if (!preg_match("/^[\\sa-zA-Z0-9]*$/", $this->username) || strlen($this->username) < 3 || strlen($this->username) > 20) {
             $result = false;
         } else {
             $result = true;
@@ -74,8 +80,26 @@ class RegisterContr extends Register {
     }
     
     private function invalidEmail() {
-        $result;
+        $result;        
+        $email = trim($_POST['email']);
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+
+        return $result;
+    }
+
+    private function invalidPassword() {
+        $result;        
+        $password = trim($this->password);
+        $uppercase    = preg_match('@[A-Z]@', $password);
+        $lowercase    = preg_match('@[a-z]@', $password);
+        $number       = preg_match('@[0-9]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
+        
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8 || strlen($password) > 20) {
             $result = false;
         } else {
             $result = true;
@@ -96,9 +120,9 @@ class RegisterContr extends Register {
     
     }
 
-    private function usernameTaken() {
+    private function emailTaken() {
         $result;
-        if (!$this->checkUser($this->username, $this->email)) {
+        if (!$this->checkUser($this->email)) {
             $result = false;
         } else {
             $result = true;

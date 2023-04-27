@@ -19,9 +19,8 @@ class Register extends Dbh {
         $stmt = null;
     }
 
-    protected function checkUser($username, $email) {
-        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = :username OR email = :email;');
-        $stmt->bindParam(':username', $username);
+    protected function checkUser($email) {
+        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE email = :email;');
         $stmt->bindParam(':email', $email);
     
         if (!$stmt->execute()) {
