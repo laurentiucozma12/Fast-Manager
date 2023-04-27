@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.form-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #8abdbd;
+}
+.forms-container {
+    display: flex;
+}
+.register {
+    display: flex;
+    align-items: center;
+    height: 250px;
+    background-color: #446fba;
+    padding: 2em;
+}
+.login {
+    display: flex;
+    align-items: center;
+    height: 250px;
+    background-color: #7e7e7e;
+    padding: 2em;
+}
+.data-container {
+    margin: 1em 0;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+}
