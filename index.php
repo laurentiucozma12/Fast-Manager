@@ -1,5 +1,6 @@
 <?php
     include 'includes/autoloader.inc.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="nav-bar">
+        <?php
+        if(isset($_SESSION['id'])) {
+        ?>
+            <li><a href=""><?php echo $_SESSION['id']?></a></li>
+            <li><a href="includes/logout.inc.php">LOGOUT</a></li>            
+        <?php 
+        } else {
+        ?>
+            <li><a href="">REGISTER</a></li>
+            <li><a href="">LOGIN</a></li>
+        <?php 
+        }
+        ?>
+    </div>
     <div class="form-wrap">
         <div class="forms-container">
             <form action="includes/register.inc.php" class="register" method="POST">
