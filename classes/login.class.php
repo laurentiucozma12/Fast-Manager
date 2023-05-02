@@ -3,10 +3,6 @@
 class Login extends Dbh {
 
     protected function getUser($email, $password) {
-        // if (!isset($_POST[$email]) || !isset($_POST[$email]) || empty($password) || empty($password)) {
-        //     echo 'Email or password is empty!';
-        // }
-
         $stmt = $this->connect()->prepare('SELECT * FROM users WHERE email = :email');
         $stmt->bindParam(':email', $email);     
     
