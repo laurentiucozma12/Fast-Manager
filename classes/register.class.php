@@ -2,12 +2,13 @@
 
 class Register extends Dbh {
 
-    protected function setUser($username, $email, $password) {
+    protected function setUser($username, $email, $password) {        
+        $options = array('cost'=>4);
+        $hashedPassword = password_hash($password,PASSWORD_BCRYPT,$options);
+        
         $stmt = $this->connect()->prepare('INSERT INTO users (username, email, password) VALUES (:username, :email, :password);');
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
-        $options = array('cost'=>4);
-        $hashedPassword = password_hash($password,PASSWORD_BCRYPT,$options);
         $stmt->bindParam(':password', $hashedPassword);
     
         if (!$stmt->execute()) {
