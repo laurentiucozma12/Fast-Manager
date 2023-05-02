@@ -25,24 +25,11 @@ class Login extends Dbh {
                 $stmt = null;
                 header("location: ../index.php?error=wrongpassword");
                 exit();
-            } else if ($checkPassword == true) {                
-                if (!$stmt->execute()) {
-                    $stmt = null;
-                    header("location: ../index.php?error=stmtfailed");
-                    exit();
-                }
-    
-                if ($stmt->rowCount() == 0) {
-                    $stmt = null;
-                    header("location: ../index.php?error=usernotfound");
-                    exit();
-                }
-    
-                $user = $stmt->fetchAll();
+            } else if ($checkPassword == true) {
                 session_start();
-                $_SESSION['id'] = $user[0]['id'];
-                $_SESSION['email'] = $user[0]['email'];
-                $stmt = null;
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                $stmt = null; 
             }
         }
 
