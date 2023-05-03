@@ -16,13 +16,13 @@
         <?php
         if(isset($_SESSION['id'])) {
         ?>
-            <li><a href=""><?php echo $_SESSION['id']?></a></li>
-            <li><a href="includes/logout.inc.php">LOGOUT</a></li>            
+            <h3><?php echo "Hello " . $_SESSION['username'] . "!"?></h3>
+            <button><a href="includes/logout.inc.php">LOGOUT</a></button>            
         <?php 
         } else {
         ?>
-            <li><a href="">REGISTER</a></li>
-            <li><a href="">LOGIN</a></li>
+            <!-- <li><a href="">REGISTER</a></li>
+            <li><a href="">LOGIN</a></li> -->
         <?php 
         }
         ?>
