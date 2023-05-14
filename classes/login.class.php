@@ -4,8 +4,8 @@ class Login extends Dbh {
 
     protected function getUser($email, $password) {
         $stmt = $this->connect()->prepare('SELECT * FROM users WHERE email = :email');
-        $stmt->bindParam(':email', $email);     
-    
+        $stmt->bindParam(':email', $email);   
+            
         if (!$stmt->execute()) {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
