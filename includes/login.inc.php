@@ -1,4 +1,7 @@
 <?php
+include 'includes/autoloader.inc.php';
+include './assets/html/head.php';
+session_start();
 
 if(isset($_POST['submit'])) {
 

@@ -9,7 +9,8 @@ if(isset($_POST['submit'])) {
 
     include "../classes/dbh.class.php";
     include "../classes/register.class.php";
-    include "../classes/register-contr.class.php";
+    include "../classes/register-contr.class.php";    
+    // include '../includes/autoloader.inc.php';
     $register = new RegisterContr($username, $email, $password, $passwordRepeat);
 
     $register->registerUser();
