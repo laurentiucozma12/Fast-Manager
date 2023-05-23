@@ -1,6 +1,7 @@
 <?php
-include '../assets/html/head.php';
-include ROOT_PATH.'/includes/autoloader.inc.php';
+    include '../assets/config/config.php';
+    include '../assets/html/head.php';
+    include ROOT_PATH.'/includes/autoloader.inc.php';
 ?>
 
 <div>

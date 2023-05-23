@@ -1,6 +1,3 @@
-<?php
-include './assets/config/config.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>	
@@ -26,3 +23,7 @@ include './assets/config/config.php';
 </head>
 <body>
 <main>
+
+
+<!-- Navbar -->
+<?php include 'navbar.php' ?>

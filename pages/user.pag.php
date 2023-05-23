@@ -1,6 +1,6 @@
 <?php
-    include 'includes/autoloader.inc.php';
-    include './assets/html/head.php';
+    include '../assets/config/config.php';
+    include '../assets/html/head.php';
     session_start();
 ?>
 

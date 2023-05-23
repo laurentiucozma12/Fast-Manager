@@ -1,6 +1,4 @@
 <?php
-include 'includes/autoloader.inc.php';
-include './assets/html/head.php';
 session_start();
 
 if(isset($_POST['submit'])) {
@@ -11,6 +9,7 @@ if(isset($_POST['submit'])) {
     include "../classes/dbh.class.php";
     include "../classes/login.class.php";
     include "../classes/login-contr.class.php";
+    // include 'includes/autoloader.inc.php';
     $login = new LoginContr($email, $password);
 
     $login->loginUser();
