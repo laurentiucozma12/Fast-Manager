@@ -1,6 +1,11 @@
 <?php
-    include './assets/config/config.php';
-    include './assets/html/head.php';
+if (!defined('HOMEPAGE')) {
+    header('Location: ../index.php');
+    exit;
+}
+
+include './assets/config/config.php';
+include ROOT_PATH.'/assets/html/head.php';
 ?>
 
 
