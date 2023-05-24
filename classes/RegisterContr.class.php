@@ -59,12 +59,12 @@ class RegisterContr extends Register {
 
     private function emptyInput() {
         $result;
-        if (empty($this->username) || empty($this->email) || empty($this->password) || empty($this->passwordRepeat) || isset($_POST[$this->username]) || isset($_POST[$this->email]) || isset($_POST[$this->password]) || isset($_POST[$this->passwordRepeat])) {
-            $result = false;
-        } else {
+        if (empty($this->username) || empty($this->email) || empty($this->password) || empty($this->passwordRepeat)) {
             $result = true;
+        } else {
+            $result = false;
         }
-
+    
         return $result;
     }
 

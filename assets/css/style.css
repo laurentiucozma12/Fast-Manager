@@ -196,7 +196,7 @@ main {
     color: var(--dark-gray) !important;
     background-color: white;
 }
-/* User Content */
+/* Home Page */
 .content {    
     padding: .5em !important;
     background-color: var(--gray);  
@@ -204,6 +204,20 @@ main {
 .article {
     height: 700px;
 }
+/* Register Page */
+.error-message {
+    width: 100%;
+    height: fit-content;
+    color: red;
+    background-color: var(--white-gray);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Responsiveness */
 @media screen and (max-width: 1400px) {
     
 }

@@ -7,13 +7,11 @@ if(isset($_POST['submit'])) {
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordrepeat"];
 
-    // include "../classes/dbh.class.php";
-    // include "../classes/register.class.php";
-    // include "../classes/register-contr.class.php";    
     include '../includes/autoloader.inc.php';
     $registerContr = new RegisterContr($username, $email, $password, $passwordRepeat);
-
     $registerContr->registerUser();
 
     header("location: ../index.php?error=none");
 }
+
+?>
